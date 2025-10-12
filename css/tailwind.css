@@ -11,30 +11,69 @@
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 
   /* Colors */
-  /* Copied from https://tailwindcss.com/docs/theme#default-theme-variable-reference */
-  --color-primary-50: oklch(0.971 0.014 343.198);
-  --color-primary-100: oklch(0.948 0.028 342.258);
-  --color-primary-200: oklch(0.899 0.061 343.231);
-  --color-primary-300: oklch(0.823 0.12 346.018);
-  --color-primary-400: oklch(0.718 0.202 349.761);
-  --color-primary-500: oklch(0.656 0.241 354.308);
-  --color-primary-600: oklch(0.592 0.249 0.584);
-  --color-primary-700: oklch(0.525 0.223 3.958);
-  --color-primary-800: oklch(0.459 0.187 3.815);
-  --color-primary-900: oklch(0.408 0.153 2.432);
-  --color-primary-950: oklch(0.284 0.109 3.907);
+  /* Gruvbox color palette */
+  --color-primary-50: #fbf1c7;
+  /* gruvbox-bright1 */
+  --color-primary-100: #ebdbb2;
+  /* gruvbox-bright0 */
+  --color-primary-200: #d5c4a1;
+  /* gruvbox-bright2 */
+  --color-primary-300: #bdae93;
+  /* gruvbox-bright3 */
+  --color-primary-400: #a89984;
+  /* gruvbox-bright4 */
+  --color-primary-500: #928374;
+  /* gruvbox-medium0 */
+  --color-primary-600: #7c6f64;
+  /* gruvbox-medium1 */
+  --color-primary-700: #665c54;
+  /* gruvbox-medium2 */
+  --color-primary-800: #504945;
+  /* gruvbox-medium3 */
+  --color-primary-900: #3c3836;
+  /* gruvbox-medium4 */
+  --color-primary-950: #282828;
+  /* gruvbox-dark0 */
 
-  --color-gray-50: oklch(0.985 0.002 247.839);
-  --color-gray-100: oklch(0.967 0.003 264.542);
-  --color-gray-200: oklch(0.928 0.006 264.531);
-  --color-gray-300: oklch(0.872 0.01 258.338);
-  --color-gray-400: oklch(0.707 0.022 261.325);
-  --color-gray-500: oklch(0.551 0.027 264.364);
-  --color-gray-600: oklch(0.446 0.03 256.802);
-  --color-gray-700: oklch(0.373 0.034 259.733);
-  --color-gray-800: oklch(0.278 0.033 256.848);
-  --color-gray-900: oklch(0.21 0.034 264.665);
-  --color-gray-950: oklch(0.13 0.028 261.692);
+  /* Gruvbox accent colors */
+  --color-red-500: #cc241d;
+  /* gruvbox-red */
+  --color-green-500: #98971a;
+  /* gruvbox-green */
+  --color-yellow-500: #d79921;
+  /* gruvbox-yellow */
+  --color-blue-500: #458588;
+  /* gruvbox-blue */
+  --color-purple-500: #b16286;
+  /* gruvbox-purple */
+  --color-aqua-500: #689d6a;
+  /* gruvbox-aqua */
+  --color-orange-500: #d65d0e;
+  /* gruvbox-orange */
+
+  /* Gruvbox gray scale for backgrounds and text */
+  --color-gray-50: #fbf1c7;
+  /* gruvbox-bright1 (lightest) */
+  --color-gray-100: #ebdbb2;
+  /* gruvbox-bright0 */
+  --color-gray-200: #d5c4a1;
+  /* gruvbox-bright2 */
+  --color-gray-300: #bdae93;
+  /* gruvbox-bright3 */
+  --color-gray-400: #a89984;
+  /* gruvbox-bright4 */
+  --color-gray-500: #928374;
+  /* gruvbox-medium0 */
+  --color-gray-600: #7c6f64;
+  /* gruvbox-medium1 */
+  --color-gray-700: #665c54;
+  /* gruvbox-medium2 */
+  --color-gray-800: #504945;
+  /* gruvbox-medium3 */
+  --color-gray-900: #3c3836;
+  /* gruvbox-medium4 */
+  --color-gray-950: #282828;
+  /* gruvbox-dark0 (darkest) */
 
   /* Line heights */
   --line-height-11: 2.75rem;
@@ -57,6 +96,7 @@
   color utility to any element that depends on these defaults.
 */
 @layer base {
+
   *,
   ::after,
   ::before,
@@ -80,38 +120,101 @@
 
 @layer utilities {
   .prose {
+    color: var(--color-gray-100);
+    /* Match the date color */
+
     & a {
-      color: var(--color-primary-500);
+      color: var(--color-blue-500);
+
       &:hover {
-        color: var(--color-primary-600);
+        color: var(--color-aqua-500);
       }
+
       & code {
-        color: var(--color-primary-400);
+        color: var(--color-purple-500);
       }
     }
+
     & :where(h1, h2) {
       font-weight: 700;
       letter-spacing: var(--tracking-tight);
+      color: var(--color-yellow-500);
     }
+
     & h3 {
       font-weight: 600;
+      color: var(--color-orange-500);
     }
+
     & :where(code):not(pre code) {
-      color: var(--color-indigo-500);
+      color: var(--color-purple-500);
+      background-color: var(--color-gray-800);
+      padding: 0.125rem 0.25rem;
+      border-radius: 0.25rem;
+    }
+
+    & blockquote {
+      border-left: 4px solid var(--color-yellow-500);
+      background-color: var(--color-gray-800);
+      padding: 1rem;
+      margin: 1rem 0;
+    }
+
+    & p {
+      color: var(--color-gray-100);
+    }
+
+    & li {
+      color: var(--color-gray-100);
     }
   }
 
   .prose-invert {
+    color: var(--color-gray-100);
+    /* Match the date color */
+
     & a {
-      color: var(--color-primary-500);
+      color: var(--color-blue-500);
+
       &:hover {
-        color: var(--color-primary-400);
+        color: var(--color-aqua-500);
       }
+
       & code {
-        color: var(--color-primary-400);
+        color: var(--color-purple-500);
       }
     }
-    & :where(h1, h2, h3, h4, h5, h6) {
+
+    & :where(h1, h2) {
+      font-weight: 700;
+      letter-spacing: var(--tracking-tight);
+      color: var(--color-yellow-500);
+    }
+
+    & h3 {
+      font-weight: 600;
+      color: var(--color-orange-500);
+    }
+
+    & :where(code):not(pre code) {
+      color: var(--color-purple-500);
+      background-color: var(--color-gray-800);
+      padding: 0.125rem 0.25rem;
+      border-radius: 0.25rem;
+    }
+
+    & blockquote {
+      border-left: 4px solid var(--color-yellow-500);
+      background-color: var(--color-gray-800);
+      padding: 1rem;
+      margin: 1rem 0;
+    }
+
+    & p {
+      color: var(--color-gray-100);
+    }
+
+    & li {
       color: var(--color-gray-100);
     }
   }
@@ -142,8 +245,10 @@
 }
 
 .no-scrollbar {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 /* https://stackoverflow.com/questions/61083813/how-to-avoid-internal-autofill-selected-style-to-be-applied */
@@ -172,4 +277,78 @@ input:-webkit-autofill:focus {
 .linkicon {
   display: inline-block;
   vertical-align: middle;
+}
+
+/* Additional Gruvbox styling */
+@layer components {
+
+  /* Button styling with Gruvbox colors */
+  .btn-primary {
+    @apply bg-blue-500 hover:bg-blue-600 text-gray-100 font-medium py-2 px-4 rounded;
+    background-color: var(--color-blue-500);
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-aqua-500);
+  }
+
+  /* Card styling */
+  .card {
+    @apply bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg p-4;
+    background-color: var(--color-gray-100);
+    border-color: var(--color-gray-300);
+  }
+
+  .dark .card {
+    background-color: var(--color-gray-800);
+    border-color: var(--color-gray-700);
+  }
+
+  /* Navigation styling */
+  .nav-link {
+    @apply text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400;
+    color: var(--color-gray-700);
+  }
+
+  .nav-link:hover {
+    color: var(--color-blue-500);
+  }
+
+  .dark .nav-link {
+    color: var(--color-gray-300);
+  }
+
+  .dark .nav-link:hover {
+    color: var(--color-blue-400);
+  }
+
+  /* Blog post title styling */
+  .blog-title {
+    color: var(--color-yellow-500) !important;
+  }
+
+  .dark .blog-title {
+    color: var(--color-yellow-500) !important;
+  }
+
+  /* Tag styling */
+  .tag-link {
+    color: var(--color-orange-500) !important;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .tag-link:hover {
+    color: var(--color-yellow-500) !important;
+    transform: translateY(-1px);
+  }
+
+  .dark .tag-link {
+    color: var(--color-orange-500) !important;
+  }
+
+  .dark .tag-link:hover {
+    color: var(--color-yellow-500) !important;
+  }
 }
