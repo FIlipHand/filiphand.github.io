@@ -7,11 +7,13 @@ interface Project {
 
 const projectsData: Project[] = [
   {
-    title: 'No Projects yet!',
-    description: `There are no project here yet, you have to wait
-    for me do do some actual work instead of tinker with nvim and tmux configs`,
-    imgSrc: '/static/images/not_found.png',
-    href: 'https://www.google.com',
+    title: 'Poorly Optimized Language Model',
+    description: `Institute of Poorly Optimized GPU Code presents its first creation: "Poorly Optimized Language mode". 
+    As a first victim of research we've chosen Qwen3 models. Repository will showcase progress of building model using PyTorch
+    and then optimizing its inference with methods like KV-caching, Speculative decoding and so on. After sufficient progress blog
+    post will be created showcasing what was achieved.`,
+    imgSrc: '/static/images/qwen3_logo.png',
+    href: 'https://github.com/FIlipHand/model_inference',
   },
 ]
 
