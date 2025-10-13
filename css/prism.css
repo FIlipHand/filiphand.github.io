@@ -1,16 +1,15 @@
 @reference "./tailwind.css";
 /**
- * Gruvbox dark theme
- *
- * Adapted from a theme based on:
- * Vim Gruvbox dark Theme (https://github.com/morhetz/gruvbox)
- *
- * @author Azat S. <to@azat.io>
- * @version 1.0
+ * Gruvbox code themes
+ * - Dark theme applies when html has class "dark"
+ * - Light theme applies when html does not have class "dark"
  */
 
-code[class*="language-"],
-pre[class*="language-"] {
+/* ====================
+   Dark (existing) theme
+   ==================== */
+html.dark code[class*="language-"],
+html.dark pre[class*="language-"] {
   color: #ebdbb2;
   /* fg1 / fg */
   font-family: Consolas, Monaco, "Andale Mono", monospace;
@@ -31,20 +30,20 @@ pre[class*="language-"] {
   hyphens: none;
 }
 
-pre[class*="language-"]::-moz-selection,
-pre[class*="language-"] ::-moz-selection,
-code[class*="language-"]::-moz-selection,
-code[class*="language-"] ::-moz-selection {
+html.dark pre[class*="language-"]::-moz-selection,
+html.dark pre[class*="language-"] ::-moz-selection,
+html.dark code[class*="language-"]::-moz-selection,
+html.dark code[class*="language-"] ::-moz-selection {
   color: #fbf1c7;
   /* fg0 */
   background: #7c6f64;
   /* bg4 */
 }
 
-pre[class*="language-"]::selection,
-pre[class*="language-"] ::selection,
-code[class*="language-"]::selection,
-code[class*="language-"] ::selection {
+html.dark pre[class*="language-"]::selection,
+html.dark pre[class*="language-"] ::selection,
+html.dark code[class*="language-"]::selection,
+html.dark code[class*="language-"] ::selection {
   color: #fbf1c7;
   /* fg0 */
   background: #7c6f64;
@@ -52,112 +51,285 @@ code[class*="language-"] ::selection {
 }
 
 /* Code blocks */
-pre[class*="language-"] {
+html.dark pre[class*="language-"] {
   padding: 1em;
   margin: 0.5em 0;
   overflow: auto;
 }
 
-:not(pre)>code[class*="language-"],
-pre[class*="language-"] {
+html.dark :not(pre)>code[class*="language-"],
+html.dark pre[class*="language-"] {
   background: #1d2021;
   /* bg0_h */
 }
 
 /* Inline code */
-:not(pre)>code[class*="language-"] {
+html.dark :not(pre)>code[class*="language-"] {
   padding: 0.1em;
   border-radius: 0.3em;
 }
 
-.token.comment,
-.token.prolog,
-.token.cdata {
+html.dark .token.comment,
+html.dark .token.prolog,
+html.dark .token.cdata {
   color: #a89984;
   /* fg4 / gray1 */
 }
 
-.token.delimiter,
-.token.boolean,
-.token.keyword,
-.token.selector,
-.token.important,
-.token.atrule {
+html.dark .token.delimiter,
+html.dark .token.boolean,
+html.dark .token.keyword,
+html.dark .token.selector,
+html.dark .token.important,
+html.dark .token.atrule {
   color: #fb4934;
   /* red2 */
 }
 
-.token.operator,
-.token.punctuation,
-.token.attr-name {
+html.dark .token.operator,
+html.dark .token.punctuation,
+html.dark .token.attr-name {
   color: #a89984;
   /* fg4 / gray1 */
 }
 
-.token.tag,
-.token.tag .punctuation,
-.token.doctype,
-.token.builtin {
+html.dark .token.tag,
+html.dark .token.tag .punctuation,
+html.dark .token.doctype,
+html.dark .token.builtin {
   color: #fabd2f;
   /* yellow2 */
 }
 
-.token.entity,
-.token.number,
-.token.symbol {
+html.dark .token.entity,
+html.dark .token.number,
+html.dark .token.symbol {
   color: #d3869b;
   /* purple2 */
 }
 
-.token.property,
-.token.constant,
-.token.variable {
+html.dark .token.property,
+html.dark .token.constant,
+html.dark .token.variable {
   color: #fb4934;
   /* red2 */
 }
 
-.token.string,
-.token.char {
+html.dark .token.string,
+html.dark .token.char {
   color: #b8bb26;
   /* green2 */
 }
 
-.token.attr-value,
-.token.attr-value .punctuation {
+html.dark .token.attr-value,
+html.dark .token.attr-value .punctuation {
   color: #a89984;
   /* fg4 / gray1 */
 }
 
-.token.url {
+html.dark .token.url {
   color: #b8bb26;
   /* green2 */
   text-decoration: underline;
 }
 
-.token.function {
+html.dark .token.function {
   color: #fabd2f;
   /* yellow2 */
 }
 
-.token.regex {
+html.dark .token.regex {
   background: #b8bb26;
   /* green2 */
 }
 
-.token.bold {
+html.dark .token.bold {
   font-weight: bold;
 }
 
-.token.italic {
+html.dark .token.italic {
   font-style: italic;
 }
 
-.token.inserted {
+html.dark .token.inserted {
   background: #a89984;
   /* fg4 / gray1 */
 }
 
-.token.deleted {
+html.dark .token.deleted {
   background: #fb4934;
   /* red2 */
+}
+
+/* ====================
+   Light (new) theme
+   ==================== */
+html:not(.dark) code[class*="language-"],
+html:not(.dark) pre[class*="language-"] {
+  color: #3c3836;
+  /* fg1 / fg */
+  font-family: Consolas, Monaco, "Andale Mono", monospace;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+html:not(.dark) pre[class*="language-"]::-moz-selection,
+html:not(.dark) pre[class*="language-"] ::-moz-selection,
+html:not(.dark) code[class*="language-"]::-moz-selection,
+html:not(.dark) code[class*="language-"] ::-moz-selection {
+  color: #282828;
+  /* fg0 */
+  background: #a89984;
+  /* bg4 */
+}
+
+html:not(.dark) pre[class*="language-"]::selection,
+html:not(.dark) pre[class*="language-"] ::selection,
+html:not(.dark) code[class*="language-"]::selection,
+html:not(.dark) code[class*="language-"] ::selection {
+  color: #282828;
+  /* fg0 */
+  background: #a89984;
+  /* bg4 */
+}
+
+/* Code blocks */
+html:not(.dark) pre[class*="language-"] {
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+}
+
+html:not(.dark) :not(pre)>code[class*="language-"],
+html:not(.dark) pre[class*="language-"] {
+  background: #f9f5d7;
+  /* bg0_h */
+}
+
+/* Inline code */
+html:not(.dark) :not(pre)>code[class*="language-"] {
+  padding: 0.1em;
+  border-radius: 0.3em;
+}
+
+html:not(.dark) .token.comment,
+html:not(.dark) .token.prolog,
+html:not(.dark) .token.cdata {
+  color: #7c6f64;
+  /* fg4 / gray1 */
+}
+
+html:not(.dark) .token.delimiter,
+html:not(.dark) .token.boolean,
+html:not(.dark) .token.keyword,
+html:not(.dark) .token.selector,
+html:not(.dark) .token.important,
+html:not(.dark) .token.atrule {
+  color: #9d0006;
+  /* red2 */
+}
+
+html:not(.dark) .token.operator,
+html:not(.dark) .token.punctuation,
+html:not(.dark) .token.attr-name {
+  color: #7c6f64;
+  /* fg4 / gray1 */
+}
+
+html:not(.dark) .token.tag,
+html:not(.dark) .token.tag .punctuation,
+html:not(.dark) .token.doctype,
+html:not(.dark) .token.builtin {
+  color: #b57614;
+  /* yellow2 */
+}
+
+html:not(.dark) .token.entity,
+html:not(.dark) .token.number,
+html:not(.dark) .token.symbol {
+  color: #8f3f71;
+  /* purple2 */
+}
+
+html:not(.dark) .token.property,
+html:not(.dark) .token.constant,
+html:not(.dark) .token.variable {
+  color: #9d0006;
+  /* red2 */
+}
+
+html:not(.dark) .token.string,
+html:not(.dark) .token.char {
+  color: #797403;
+  /* green2 */
+}
+
+html:not(.dark) .token.attr-value,
+html:not(.dark) .token.attr-value .punctuation {
+  color: #7c6f64;
+  /* fg4 / gray1 */
+}
+
+html:not(.dark) .token.url {
+  color: #797403;
+  /* green2 */
+  text-decoration: underline;
+}
+
+html:not(.dark) .token.function {
+  color: #b57614;
+  /* yellow2 */
+}
+
+html:not(.dark) .token.regex {
+  background: #797403;
+  /* green2 */
+}
+
+html:not(.dark) .token.bold {
+  font-weight: bold;
+}
+
+html:not(.dark) .token.italic {
+  font-style: italic;
+}
+
+html:not(.dark) .token.inserted {
+  background: #7c6f64;
+  /* fg4 / gray1 */
+}
+
+html:not(.dark) .token.deleted {
+  background: #9d0006;
+  /* red2 */
+}
+
+/* Ensure light mode uses light backgrounds inside prose/typography */
+html:not(.dark) .prose pre,
+html:not(.dark) .prose pre[class*="language-"],
+html:not(.dark) .prose :not(pre)>code,
+html:not(.dark) .prose :not(pre)>code[class*="language-"] {
+  background: #f9f5d7 !important;
+  /* bg0_h */
+  color: #3c3836;
+}
+
+/* Keep dark mode code blocks on dark background inside prose/typography */
+html.dark .prose pre,
+html.dark .prose pre[class*="language-"] {
+  background: #1d2021 !important;
+  /* bg0_h */
 }
