@@ -120,7 +120,7 @@
 
 @layer utilities {
   .prose {
-    color: var(--color-gray-100);
+    color: var(--color-gray-900);
     /* Match the date color */
 
     & a {
@@ -161,12 +161,25 @@
     }
 
     & p {
-      color: var(--color-gray-100);
+      color: var(--color-gray-900);
     }
 
     & li {
-      color: var(--color-gray-100);
+      color: var(--color-gray-900);
     }
+  }
+
+  /* Ensure dark mode keeps high-contrast light text even when elements only use `prose` */
+  .dark .prose {
+    color: var(--color-gray-100);
+  }
+
+  .dark .prose p {
+    color: var(--color-gray-100);
+  }
+
+  .dark .prose li {
+    color: var(--color-gray-100);
   }
 
   .prose-invert {

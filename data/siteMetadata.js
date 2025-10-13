@@ -1,8 +1,8 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'Ministry of Poorly Optimized GPU Code',
+  title: 'Institute of Poorly Optimized GPU Code',
   author: 'Filip Reka',
-  headerTitle: 'Ministry of Poorly Optimized GPU Code',
+  headerTitle: 'Institute of Poorly Optimized GPU Code',
   description: 'A place for me to blog and showcase come cool thing that I did or found interesting',
   language: 'en-us',
   theme: 'dark', // system, dark or light
