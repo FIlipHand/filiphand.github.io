@@ -1,1 +1,8 @@
-{}
+{
+    "cuda": 1,
+    "gpu": 1,
+    "learning": 1,
+    "triton": 1,
+    "mojo": 1,
+    "phd": 1
+}
