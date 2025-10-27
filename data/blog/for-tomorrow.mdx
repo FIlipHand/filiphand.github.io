@@ -26,6 +26,12 @@ performance analysis using PyTorch profilers and NVIDIA's NCU (NVIDIA Compute Ut
 - Use PyTorch Profiler and NVIDIA NCU to identify performance bottlenecks
 - Document which operations consume the most compute time
 
+### Inference-Specific Optimizations
+- KV Caching - Implement efficient key-value cache management for autoregressive generation
+- Batch inference
+- Speculative decoding - draft token generation using a smaller model
+- Attention Optimization - Implement or integrate FlashAttention or similar memory-efficient attention mechanisms
+
 ### Compiler-Level Optimizations
 - `torch.compile()`: Leverage PyTorch's built-in compilation features to optimize the computational graph
 - Experiment with different backends (inductor, cudagraph)
@@ -38,7 +44,7 @@ performance analysis using PyTorch profilers and NVIDIA's NCU (NVIDIA Compute Ut
 - Benchmark custom kernels against PyTorch's built-in implementations
 - Use NCU to analyze achieved compute utilization
 
-### Advanced Linear Algebra Optimizations (very maybe...)
+### Advanced Linear Algebra Optimizations
 - Implement and benchmark optimized matrix multiplication kernels (e.g., using Tensor Cores more effectively)
 - Experiment with mixed-precision operations
 - Evaluate sparsity patterns and their impact on computation
@@ -51,9 +57,3 @@ performance analysis using PyTorch profilers and NVIDIA's NCU (NVIDIA Compute Ut
 - Benchmark different quantization schemes (symmetric, asymmetric, per-channel, per-tensor)
 - Measure accuracy degradation on validation datasets alongside inference speedup
 - Combine quantization with other optimizations (e.g., quantized + compiled models)
-
-### Inference-Specific Optimizations
-- KV Caching - Implement efficient key-value cache management for autoregressive generation
-- Batch inference
-- Speculative decoding - draft token generation using a smaller model
-- Attention Optimization - Implement or integrate FlashAttention or similar memory-efficient attention mechanisms
