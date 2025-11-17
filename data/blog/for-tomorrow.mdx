@@ -20,37 +20,31 @@ performance analysis using PyTorch profilers and NVIDIA's NCU (NVIDIA Compute Ut
 - Demonstrate Trade-offs: Show how different optimizations affect accuracy, memory usage, and latency
 
 ## Scope and Techniques
-### Baseline and Profiling
+### Baseline and Profiling 
 - Select a target model (e.g., a transformer-based language model or vision model)
 - Establish baseline inference metrics (latency, throughput, memory usage)
 - Use PyTorch Profiler and NVIDIA NCU to identify performance bottlenecks
 - Document which operations consume the most compute time
 
-### Inference-Specific Optimizations
+### Inference-Specific Optimizations 
 - KV Caching - Implement efficient key-value cache management for autoregressive generation
 - Batch inference
 - Speculative decoding - draft token generation using a smaller model
-- Attention Optimization - Implement or integrate FlashAttention or similar memory-efficient attention mechanisms
 
-### Compiler-Level Optimizations
+### Compiler-Level Optimizations 
 - `torch.compile()`: Leverage PyTorch's built-in compilation features to optimize the computational graph
 - Experiment with different backends (inductor, cudagraph)
 - Measure speedup from graph optimization and kernel fusion
 - Compare compiled vs. non-compiled inference
 
-### Custom Kernel Development
-- CUDA Kernels: Implement custom CUDA kernels for critical operations (e.g., optimized attention mechanisms)
+### Custom Kernel Development 
+- CUDA Kernels: Implement custom CUDA kernels and use them in python code
 - Triton Kernels: Use Triton's higher-level abstractions to write performant kernels without low-level CUDA details
+- Attention Optimization - Implement or integrate FlashAttention or similar memory-efficient attention mechanisms
 - Benchmark custom kernels against PyTorch's built-in implementations
 - Use NCU to analyze achieved compute utilization
 
-### Advanced Linear Algebra Optimizations
-- Implement and benchmark optimized matrix multiplication kernels (e.g., using Tensor Cores more effectively)
-- Experiment with mixed-precision operations
-- Evaluate sparsity patterns and their impact on computation
-- Compare against cuBLAS and other optimized libraries
-
-### Model-Level Quantization
+### Model-Level Quantization 
 - Dynamic Quantization: Convert weights and activations to lower precision (INT8, FP8) at runtime
 - Post-Training Quantization: Apply quantization without retraining, with calibration on representative data
 - Quantization-Aware Training: Fine-tune models with simulated quantization for better accuracy preservation
